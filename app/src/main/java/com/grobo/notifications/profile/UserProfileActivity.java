@@ -42,7 +42,6 @@ import static com.grobo.notifications.utils.Constants.USER_TOKEN;
 
 public class UserProfileActivity extends AppCompatActivity implements PORRecyclerAdapter.OnPORSelectedListener {
 
-
     private PORRecyclerAdapter adapter;
 
     private RecyclerView recyclerView;
@@ -172,11 +171,10 @@ public class UserProfileActivity extends AppCompatActivity implements PORRecycle
 
                                     JSONArray array = por.getJSONArray("access");
                                     List<Integer> access = new ArrayList<>();
-                                    for (int j = 0; j < array.length(); i++) access.add(array.getInt(i));
+                                    for (int j = 0; j < array.length(); j++) access.add(array.getInt(j));
 
                                     porItemList.add(new PORItem(porId, clubId, clubName, code, position, access));
                                 }
-
 
                                 adapter.setItemList(porItemList);
 

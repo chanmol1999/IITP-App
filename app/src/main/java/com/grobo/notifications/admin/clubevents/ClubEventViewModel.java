@@ -24,7 +24,7 @@ public class ClubEventViewModel extends AndroidViewModel {
         allEvents = dao.getAllEvents();
     }
 
-    LiveData<List<ClubEventItem>> getAllEvents() {
+    public LiveData<List<ClubEventItem>> getAllEvents() {
         return allEvents;
     }
 
@@ -35,7 +35,6 @@ public class ClubEventViewModel extends AndroidViewModel {
     LiveData<List<ClubEventItem>> getAllDateEvents(long start, long end) {
         return dao.getEventsByDate(start, end);
     }
-
 
     public void insert(ClubEventItem clubEventItem) {
         new insertAsyncTask(dao).execute(clubEventItem);
